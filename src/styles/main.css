@@ -217,27 +217,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav__links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background: var(--secondary-yellow);
-  transition: width 0.3s ease;
+  display: none;
 }
 
 .nav__links a:hover {
   color: var(--secondary-yellow);
 }
 
-.nav__links a:hover::after,
-.nav__links a.active::after {
-  width: 100%;
-}
-
 .nav__links a.active {
   color: var(--secondary-yellow);
+}
+
+.nav__menu-logo {
+  display: none;
 }
 
 .nav__toggle {
@@ -1003,21 +995,24 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 900px) {
   .nav__links {
     position: fixed;
-    top: 0;
-    right: 0;
+    inset: 0;
+    width: 100vw;
     height: 100vh;
-    width: min(300px, 80vw);
-    background: rgba(6, 10, 20, 0.98);
-    border-left: 1px solid var(--border);
+    background: linear-gradient(
+        180deg,
+        rgba(4, 8, 18, 0.92),
+        rgba(10, 18, 36, 0.95)
+      );
     padding: var(--spacing-3xl) var(--spacing-md);
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: var(--spacing-sm);
     opacity: 0;
     pointer-events: none;
-    transform: translateX(100%);
+    transform: translateY(-2%);
     transition: opacity 0.3s ease, transform 0.3s ease;
-    backdrop-filter: blur(20px);
-    align-items: flex-start;
+    backdrop-filter: blur(22px);
+    align-items: center;
+    justify-content: flex-start;
     z-index: 1000;
   }
 
@@ -1028,9 +1023,43 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .nav__links a {
-    font-size: 1.2rem;
-    width: 100%;
-    padding: var(--spacing-sm) 0;
+    font-size: 1.05rem;
+    width: min(320px, 85vw);
+    padding: 14px 20px;
+    text-align: center;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(14px);
+  }
+
+  .nav__links a:hover {
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.16);
+  }
+
+  .nav__links a.active {
+    background: linear-gradient(
+      120deg,
+      var(--secondary-yellow),
+      var(--secondary-yellow-dark)
+    );
+    color: var(--text-dark);
+    box-shadow: 0 14px 32px rgba(255, 193, 7, 0.4);
+  }
+
+  .nav__menu-logo {
+    display: grid;
+    place-items: center;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .nav__menu-logo img {
+    width: 84px;
+    height: 84px;
+    object-fit: contain;
+    filter: drop-shadow(0 16px 28px rgba(0, 0, 0, 0.45));
   }
 
   .nav__toggle {

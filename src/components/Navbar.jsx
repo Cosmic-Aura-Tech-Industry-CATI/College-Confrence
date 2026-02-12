@@ -31,11 +31,14 @@ export default function Navbar() {
         <span className="nav__toggle-bar" />
       </button>
       <div className={`nav__links ${isMenuOpen ? "is-open" : ""}`}>
+        <div className="nav__menu-logo" aria-hidden={!isMenuOpen}>
+          <img src="/assets/brand/axis-logo.webp" alt="Axis Colleges" />
+        </div>
         {navLinks.map((link) => (
           <Link
             key={link.path}
             to={link.path}
-            className={location.pathname === link.path ? "active" : ""}
+            className={`nav__link ${location.pathname === link.path ? "active" : ""}`}
             onClick={closeMenu}
           >
             {link.label}
