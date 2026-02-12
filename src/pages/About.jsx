@@ -57,7 +57,7 @@ export default function About() {
 
       <section className="section">
         <div className="container">
-          <div className="spotlight__card">
+          <div className="spotlight__card spotlight__card--mission">
             <div className="spotlight__content">
               <p className="eyebrow">Our Mission</p>
               <h2>Empowering Minds, Shaping Futures</h2>

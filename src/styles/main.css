@@ -1038,8 +1038,12 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 1001;
   }
 
+  .hero__content {
+    grid-template-columns: 1fr;
+  }
+
   .hero__panel {
-    order: -1;
+    order: 2;
   }
 
   .section {
@@ -1057,9 +1061,34 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 600px) {
+  .hero {
+    min-height: auto;
+  }
+
+  .hero__content {
+    margin-top: var(--spacing-lg);
+    text-align: center;
+  }
+
+  .hero__text {
+    align-items: center;
+  }
+
+  .hero__lead {
+    max-width: 100%;
+  }
+
   .hero__actions {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .hero__panel {
+    padding: var(--spacing-sm);
+  }
+
+  .hero__stat {
+    padding: var(--spacing-xs);
   }
 
   .btn {
@@ -1105,6 +1134,18 @@ h1, h2, h3, h4, h5, h6 {
 
   .hero__stat-label {
     text-align: center;
+  }
+
+  .spotlight__card--mission {
+    text-align: center;
+  }
+
+  .spotlight__card--mission .spotlight__image {
+    order: -1;
+  }
+
+  .spotlight__card--mission .spotlight__content {
+    align-items: center;
   }
 }
 
