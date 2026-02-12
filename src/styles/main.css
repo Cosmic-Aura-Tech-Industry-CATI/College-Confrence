@@ -732,20 +732,45 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer__links a {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  font-weight: 600;
-  transition: background 0.3s ease, transform 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 10px;
+  background: transparent;
+  border: none;
+  position: relative;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .footer__links a:hover {
-  background: var(--primary-blue);
-  transform: translateY(-4px);
+  transform: translateY(-4px) scale(1.08);
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.45));
+}
+
+.footer__links a i {
+  font-size: 1.25rem;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.footer__links a:hover i {
+  transform: translateY(-2px) scale(1.15);
+  text-shadow: 0 0 18px currentColor;
+}
+
+.footer__links .fa-instagram {
+  color: #e4405f;
+}
+
+.footer__links .fa-facebook-f {
+  color: #1877f2;
+}
+
+.footer__links .fa-x-twitter {
+  color: #1da1f2;
+}
+
+.footer__links .fa-linkedin-in {
+  color: #0a66c2;
 }
 
 .footer__copy {

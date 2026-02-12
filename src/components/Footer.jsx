@@ -1,9 +1,24 @@
 const socialLinks = [
-  { label: "Instagram", href: "https://instagram.com/axiscolleges", icon: "IG" },
-  { label: "Facebook", href: "https://facebook.com/axiscolleges", icon: "FB" },
-  { label: "Twitter", href: "https://twitter.com/axiscolleges", icon: "TW" },
-  { label: "YouTube", href: "https://youtube.com/@axiscolleges", icon: "YT" },
-  { label: "LinkedIn", href: "https://linkedin.com/company/axiscolleges", icon: "IN" },
+  {
+    label: "Instagram",
+    href: "https://instagram.com/axiscolleges",
+    iconClass: "fa-brands fa-instagram",
+  },
+  {
+    label: "Facebook",
+    href: "https://facebook.com/axiscolleges",
+    iconClass: "fa-brands fa-facebook-f",
+  },
+  {
+    label: "Twitter",
+    href: "https://twitter.com/axiscolleges",
+    iconClass: "fa-brands fa-x-twitter",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/school/axis-colleges/posts/?feedView=all",
+    iconClass: "fa-brands fa-linkedin-in",
+  },
 ];
 
 export default function Footer() {
@@ -22,7 +37,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {link.icon}
+            <i className={link.iconClass} aria-hidden="true" />
           </a>
         ))}
       </div>
